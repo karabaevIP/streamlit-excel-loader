@@ -37,7 +37,7 @@ def calculate_metrics(weight: float, price: float, fat_pct: float, prot_pct: flo
         denom = (weight * FAT_SHARE / BASIS_FAT_PRICE * fat
                  + weight * PROT_SHARE / BASIS_PROT * prot)
         xx_bc = xx_stoim / denom if denom != 0 else 0.0
-        xx_bv = xx_stoim / xx_bkg if xx_bkg != 0 else 0.0
+        xx_bv = xx_stoim / xx_bc if xx_bc != 0 else 0.0
 
     return {
         "XX_вес": weight,
